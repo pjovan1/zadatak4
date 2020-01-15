@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadatak IV</title>
+</head>
+<body>
+    <h2>JavaScript kalkulator</h2>
+    <select id="izbor">
+        <option value="sabiranje">Sabiranje</option>
+        <option value="oduzimanje">Oduzimanje</option>
+        <option value="mnozenje">Mnozenje</option>
+        <option value="deljenje">Deljenje</option>
+    </select>
+
+    <br><br>
+    <label>Prvi broj:</label>
+	<br>
+    <input type="text" id="prvi"/>
+
+    <br><br>
+    <label>Drugi broj:</label>
+	<br>
+    <input type="text" id="drugi"/>
+
+    <br>
+    <p id="rezultat">Rezultat: /</p>
+
+    <br>
+    <input type="submit" value="Izracunaj" onclick="izracunaj();">
+
+    
+    <script>
+        function izracunaj(){
+            var prvi = document.getElementById('prvi').value;
+            var drugi = document.getElementById('drugi').value;
+            var izbor = document.getElementById('izbor').selectedIndex;
+            
+            var rezultat = 0;
+
+            switch(izbor){
+                case 0:
+                    rezultat = +prvi + +drugi; 
+                    break;
+                    
+                case 1:
+                    rezultat = prvi - drugi;
+                    break;
+                case 2:
+                    rezultat = prvi * drugi;
+                    break;
+                case 3:
+                    rezultat = prvi / drugi;
+            }
+
+            document.getElementById('rezultat').innerHTML = "Rezultat: " + rezultat;
+        } 
+    </script>
+</body>
+</html>
